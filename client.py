@@ -1,7 +1,7 @@
 import socket 
 import json 
 
-
+# function to establish connecion and send message
 def communicate_with_server(ip, port, message): 
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
     client.connect((ip, port)) 
