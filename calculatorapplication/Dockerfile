@@ -5,7 +5,7 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Copy the Python script to the container
-COPY Minicalcy.py .
+COPY Minicalc.py .
 
 # Run the Python script when the container launches
-CMD ["python", "Minicalcy.py"] 
+CMD ["python", "Minicalc.py"] 
