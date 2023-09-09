@@ -15,10 +15,14 @@ pipeline {
                 sh '''
                     python -m venv venv
                     source venv/bin/activate
-                    pip install -r requirements.txt
+                    # Install required python packages
+                    pip install requests
+                
+                    # Run your Python script
+                    python getrestapi.py  
                 '''
-               # Run your Python script
-               python getrestapi.py
+
+
             }
         }
     }
