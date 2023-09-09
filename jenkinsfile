@@ -13,6 +13,9 @@ pipeline {
             steps {
                 // Set up Python environment (e.g., using virtualenv)
                 sh '''
+                    hostname
+                    ls
+                    dir
                     python -m venv venv
                     source venv/bin/activate
                     pip install -r requirements.txt
