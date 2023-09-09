@@ -18,7 +18,7 @@ pipeline {
                     pip3 install requests
                 
                     # Run your Python script
-                    python3 getrestapi.py  
+                    python3 GetRestApi/getrestapi.py  
                 '''
 
 
