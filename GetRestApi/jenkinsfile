@@ -11,7 +11,6 @@ pipeline {
 
         stage('Build and Run Python Script') {
             steps {
-                #Set up Python environment (e.g., using virtualenv)
                 sh '''
                     # python -m venv venv
                     #.venv/bin/activate
