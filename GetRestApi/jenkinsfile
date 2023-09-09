@@ -9,17 +9,25 @@ pipeline {
             }
         }
 
-        stage('Build and Test') {
+        stage('Build and Run Python Script') {
             steps {
-                // Set up Python environment (e.g., using virtualenv)
+                #  Set up Python environment (e.g., using virtualenv)
                 sh '''
                     python -m venv venv
                     source venv/bin/activate
                     pip install -r requirements.txt
                 '''
-               // Run your Python script
-               sh 'python your_script.py'
-           }
+               # Run your Python script
+               python getrestapi.py
+            }
         }
-  }
+    }
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+        failure {
+            echo 'Pipelinefailed Check the build logs for details.'
+        }
+    }
 }
