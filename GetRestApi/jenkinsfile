@@ -15,7 +15,7 @@ pipeline {
                     # python -m venv venv
                     #.venv/bin/activate
                     # Install required python packages
-                    pip3 install requests
+                    #pip3 install requests
                 
                     # Run your Python script
                     python3 GetRestApi/getrestapi.py  
