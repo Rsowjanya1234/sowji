@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/api/resource', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_resource():
     data = {
         'id': 1,
