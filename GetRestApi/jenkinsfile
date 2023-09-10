@@ -19,7 +19,7 @@ pipeline {
                 
                     # Run your Python script
                     #python3 GetRestApi/getrestapi.py  
-                    python3 pythonfile.py
+                    python3 jenkinsfile.py
                 '''
 
 
