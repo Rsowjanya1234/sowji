@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copy the Python scripts and server configurationfile into the container
 COPY getrestapi.py /app/
+COPY config.json /app/
 
 # Command to run the server script
 ENTRYPOINT ["python", "/app/getrestapi.py"]
