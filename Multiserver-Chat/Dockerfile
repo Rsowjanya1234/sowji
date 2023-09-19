@@ -5,7 +5,6 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Copy the Python scripts and server configurationfile into the container
-COPY client.py /app/
 COPY server1.py /app/
 COPY server2.py /app/
 COPY ip_port_config.json /app/
