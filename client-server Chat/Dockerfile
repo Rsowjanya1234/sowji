@@ -5,7 +5,6 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Copy the Python scripts and server configurationfile into the container
-COPY one_client.py /app/
 COPY one_server.py /app/
 COPY server_config.json /app/
 
