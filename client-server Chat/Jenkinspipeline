@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+ 
+
+    stages {
+        stage('Build') {
+            steps {
+                dir('client-server Chat') {
+                    sh 'ls'
+                    sh 'docker build -t flask -f Dockerfile .'
+                }
+            }
+        }
+    }
+}
