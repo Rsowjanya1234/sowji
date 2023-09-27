@@ -1,0 +1,24 @@
+pipeline {
+   agent any
+
+    stages {
+
+        stage('Build') {
+
+            steps {
+
+                dir('xml2json') {
+
+                    sh 'ls'
+
+                    sh 'docker build -t xmltojsonconvertion -f Dockerfile .'
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
