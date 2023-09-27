@@ -7,7 +7,7 @@ pipeline {
             steps {
                 dir('GetRestApi'){
                     sh 'ls'
-                    sh 'docker build -t clientserver -f Dockerfile .'
+                    sh 'docker build -t flask -f Dockerfile .'
                 }
             }
         }
