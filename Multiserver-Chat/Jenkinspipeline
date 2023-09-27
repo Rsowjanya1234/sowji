@@ -8,7 +8,7 @@ pipeline {
             steps {
                 dir('Multiserver-Chat') {
                     sh 'ls'
-                    sh 'docker build -t flask -f Dockerfile .'
+                    sh 'docker build -t Multiserver -f Dockerfile .'
                 }
             }
         }
