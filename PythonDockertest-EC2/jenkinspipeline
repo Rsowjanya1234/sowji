@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('getrestapi') {
+                dir('PythonDockertest-EC2') {
                     sh 'ls'
                     sh 'docker build -t flask -f Dockerfile .'
                 }
