@@ -39,8 +39,6 @@ pipeline {
 
                             sudo docker login -u sowjanyarangisetty5@gmail.com -p 'Rsowjanya@16'
                             sudo docker pull sowjanyarangisetty/python-programs:flask
-                            
-                           EOF
                         """
                     }
                 }
