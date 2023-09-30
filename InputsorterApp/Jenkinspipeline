@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                dir('InputsorterApp') {
+                    sh 'ls'
+                    sh 'docker build -t ascenddescendsorting -f Dockerfile .'
+                }
+            }
+        }
+    }
+}
