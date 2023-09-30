@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+ 
+
+    stages {
+        stage('Build') {
+            steps {
+                dir('Multiserver-Chat') {
+                    sh 'ls'
+                    sh 'docker build -t multiserver -f Dockerfile .'
+                }
+            }
+        }
+    }
+}
