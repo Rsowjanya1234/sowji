@@ -10,7 +10,7 @@ WORKDIR /testwork
 
 # Copy the current directory contents into the container at /testwork
 
-COPY ascdes.py /testwork/
+COPY ascend_decend_sorter.py /testwork/
  
 
 # Define the command to run your application
