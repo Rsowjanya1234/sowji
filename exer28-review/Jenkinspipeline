@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                dir('exer28-review') {
+                    sh 'ls'
+                    sh 'docker build -t ascenddescendsorting -f Dockerfile .'
+                }
+            }
+        }
+    }
+}
