@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>User Input</title>
+
+</head>
+
+<body>
+
+<h1>User Input</h1>
+
+<form id="messageForm">
+
+<label for="source">Source:</label>
+
+<input type="text" id="source" name="source"><br><br>
+
+<label for="message">Message:</label>
+
+<input type="text" id="message" name="message"><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+    <div id="successMessage" style="color: green;"></div>
+
+    <script>
+
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+
+            event.preventDefault(); // Prevent the default form submission
+
+            const source = document.getElementById('source').value;
+
+            const message = document.getElementById('message').value;
+
+            const data = {
+
+                "source": source,
+
+                "message": message
+
+            };
+
+            const url = '/messages'; // Use the correct endpoint
+
+            // Send the data as JSON
+
+            fetch(url, {
+
+                method: 'POST',
+
+                headers: {
+
+                    'Content-Type': 'application/json',
+
+                },
+
+                body: JSON.stringify(data),
+
+            })
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                const successMessageDiv = document.getElementById('successMessage');
+
+                successMessageDiv.textContent = 'Message sent successfully';
+
+                console.log(data);
+
+                // Handle the response as needed
+
+            })
+
+            .catch(error => {
+
+                console.error('Error:', error);
+
+            });
+
+        });
+
+</script>
+
+</body>
+
+</html>
