@@ -15,11 +15,11 @@ def send_user_input():
     }
 
     response = requests.post(db_service_url, data=user_input)
-    return render_template('input_user.html', message=response)
+    return render_template('Input_user.html', message=response)
 
 @app.route('/send_user_input')
 def index():
-    return render_template('user_input.html')
+    return render_template('Input_user.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
