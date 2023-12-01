@@ -15,7 +15,7 @@ def user_input():
   if request.method == 'POST':
     source = request.form.get('source')
     message = request.form.get('message')
-    sql = "INSERT INTO message_db (source, message) VALUES (%s, %s)"
+    sql = "INSERT INTO message_db_info (source, message) VALUES (%s, %s)"
     val = (source, message)
     cursor.execute(sql, val)
     mydb.commit()
@@ -35,10 +35,10 @@ def db_service():
   for row in data:
     detailed_report.append(dict(zip(columns, row)))
     
-  cursor.execute("SELECT message FROM message_db")
+  cursor.execute("SELECT message FROM message_db_info")
   all_messages = [row[0] for row in cursor.fetchall()]
   
-  cursor.execute("SELECT source FROM message_db")
+  cursor.execute("SELECT source FROM message_db_info")
   all_senders = [row[0] for row in cursor.fetchall()]
   message_counts = Counter(all_messages)
   
