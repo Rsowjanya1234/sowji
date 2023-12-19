@@ -33,7 +33,7 @@ Get Employee by ID
     Run Keyword If    '${response.status_code}' == '200'    Log    Employee: ${response.content}
 
 Update Employee
-    ${data}=    Create Data    sindhu    HR    Manager
+    ${data}=    Create Data    sowjanya   software    Tester
     ${response}=    Put On Session    employee_api    /employees/4    json=${data}    headers=${HEADERS}
     Should Be Equal As Strings    ${response.status_code}    200
 
