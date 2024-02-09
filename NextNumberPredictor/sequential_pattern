@@ -1,0 +1,36 @@
+def identify_sequential_pattern(sequence):
+    if len(sequence) < 2:
+        return "Sequence must have at least two elements."
+
+    # Check if the sequence is numeric or alphabetical
+    if isinstance(sequence[0], int) or isinstance(sequence[0], float):
+        is_numeric = True
+    elif isinstance(sequence[0], str) and sequence[0].isalpha():
+        is_numeric = False
+    else:
+        return "Sequence must consist of numbers or characters."
+
+    # Identify the common difference for numeric sequences or common character difference for character sequences
+    difference = sequence[1] - sequence[0] if is_numeric else ord(sequence[1]) - ord(sequence[0])
+
+    # Check if the sequence is sequential
+    if all((sequence[i+1] - sequence[i] == difference) if is_numeric else (ord(sequence[i+1]) - ord(sequence[i]) == difference) for i in range(len(sequence)-1)):
+        # Generate and return the next element in the sequence
+        next_element = sequence[-1] + difference if is_numeric else chr(ord(sequence[-1]) + difference)
+        return next_element
+    else:
+        return "Sequence is not sequential."
+
+
+# Test cases
+sequence_1 = [1, 2, 3, 4]
+sequence_2 = [2, 4, 6, 8]
+sequence_3 = [1, 3, 5, 7]
+sequence_4 = ['A', 'B', 'C', 'D']
+sequence_5 = ['A1', 'A2', 'A3', 'A4']
+
+print("Next element in sequence 1:", identify_sequential_pattern(sequence_1))
+print("Next element in sequence 2:", identify_sequential_pattern(sequence_2))
+print("Next element in sequence 3:", identify_sequential_pattern(sequence_3))
+print("Next element in sequence 4:", identify_sequential_pattern(sequence_4))
+print("Next element in sequence 5:", identify_sequential_pattern(sequence_5))
